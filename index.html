@@ -25,16 +25,24 @@
 
         <!-- Main Content -->
         <main>
-            <header>
-                <h1>Your Trusted Travel Agent</h1>
+            <header class="parent-header">
+                <h1> Your Trusted Travel Agent</h1>
 
-                <h4>Your Happines is Our Happines</h4>
+                <h4> Your Happines is Our Happines</h4>
             </header>
 
-        <section>
+        <section class="content-container">
             <!-- banner autoslide -->
             <aside class="main-content">
-                <p>Banner Autoslide</p>
+                <div class="slider">
+                <div class="slides">
+                    <img src="asset/vatican.jpg" alt="slide1">
+                    <img src="asset/jerusalem.jpg"alt="slide2">
+                    <img src="asset/mekkah.jpg" alt="slide3">
+                </div>
+                <div class="arrow left-arrow"></div>
+                <div class="arrow right-arrow"></div>
+                </div>
             </aside>
 
             <!-- Form Contact Us -->
@@ -49,5 +57,23 @@
         <footer>
 
         </footer>
+
+        <script>
+            let currentIndex = 0;
+            const slides = document.querySelectorAll('.slides img');
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                const slider = document.querySelector('.slides');
+                slider.style.transform = `translateX(-${index * 100 / totalSlides}%)`;
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                showSlide(currentIndex);
+            }
+
+            setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        </script>
     </body>
 </html>
