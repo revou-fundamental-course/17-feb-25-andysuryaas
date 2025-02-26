@@ -8,72 +8,87 @@
     </head>
     
     <body>
-        <!-- header navigation -->
-        <header class="main-header">
-            <!-- Logo Company -->
-            <div class="logo-company"></div>
+        <div class="page-container">
+            <!-- header navigation -->
+            <header class="main-header">
+                <!-- Logo Company -->
+                <div class="logo-company"></div>
 
-            <nav>
-                <!-- terhubung dengan no-border-radius-right pada style.css, mengatur border radius pada navbar -->
-                <a href=""class="no-border-radius-right">Home</a>  
-                <a href="" class="no-border-radius">Our Packages</a>
-                <a href="" class="no-border-raadius-left">Call Us</a>
-            </nav>
-        </header>
-
-        <hr>
-
-        <!-- Main Content -->
-        <main>
-            <header class="parent-header">
-                <h1> Your Trusted Travel Agent</h1>
-
-                <h4> Your Happines is Our Happines</h4>
+                <nav>
+                    <!-- terhubung dengan no-border-radius-right pada style.css, mengatur border radius pada navbar -->
+                    <a href="#banner" class="no-border-radius-right">Home</a>  
+                    <a href="#packages" class="no-border-radius">Our Packages</a>
+                    <a href="#contact" class="no-border-radius-left">Call Us</a>
+                </nav>
             </header>
 
-        <section class="content-container">
-            <!-- banner autoslide -->
-            <aside class="main-content">
-                <div class="slider">
-                <div class="slides">
-                    <img src="asset/vatican.jpg" alt="slide1">
-                    <img src="asset/jerusalem.jpg"alt="slide2">
-                    <img src="asset/mekkah.jpg" alt="slide3">
-                </div>
-                <div class="arrow left-arrow"></div>
-                <div class="arrow right-arrow"></div>
-                </div>
-            </aside>
+            <hr>
 
-            <!-- Form Contact Us -->
-             <aside class="main-container">
-                <p>Form Contact Us</p>
-             </aside>
-           </section>
+            <!-- Main Content -->
+            <main class="content-wrap">
+                <header class="parent-header" id="banner">
+                    <h1> Andy Holy Tour and Travel</h1>
+                    <h4> Your Happines is Our Happines</h4>
+                </header>
 
-        </main>
+                <section class="content-container">
+                    <!-- banner autoslide -->
+                    <aside class="main-content">
+                        <div class="slider"> 
+                            <div class="slides">
+                                <img src="asset/vatican.jpg" alt="slide1">
+                                <img src="asset/jerusalem.jpg" alt="slide2">
+                                <img src="asset/mekkah.jpg" alt="slide3">
+                            </div>
+                            <div class="arrow left-arrow" onclick="prevSlide()">&#10094;</div>
+                            <div class="arrow right-arrow" onclick="nextSlide()">&#10095;</div>
+                        </div>
+                    </aside>
+                </section>
 
-        <!-- Footer -->
-        <footer>
+                <!-- Our Packages Section -->
+                <section id="packages">
+                    <div class="packages-container">
+                        <img src="asset/package1.jpg" alt="Package Image 1" class="package-image">
+                        <div class="alasan">
+                            <h3>Mengapa harus kami?</h3>
+                            <p>1. Sudah Teruji Sejak 2018 </p>
+                            <p>2. Harga Terjangkau </p>
+                            <p>3. Pelayanan Terbaik </p>
+                            <p>4. Berbagai Paket Wisata </p>
+                            <p>5. Banyak Pilihan Destinasi</p>
+                        </div>
+                        <img src="asset/package2.jpg" alt="Package Image 2" class="package-image">
+                    </div>
+                </section>
 
-        </footer>
+                <!-- Contact Us Section -->
+                <section class="content-container" id="contact">
+                    <aside class="main-container">
+                        <form>
+                            <h2>Contact Us</h2>
+                            <h4>Kamu akan dihubungi dalam 1x24 jam setelah data kami terima</h4>
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="name" required><br><br>
 
-        <script>
-            let currentIndex = 0;
-            const slides = document.querySelectorAll('.slides img');
-            const totalSlides = slides.length;
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" required><br><br>
 
-            function showSlide(index) {
-                const slider = document.querySelector('.slides');
-                slider.style.transform = `translateX(-${index * 100 / totalSlides}%)`;
-            }
+                            <label for="interest">What you are interested in?</label>
+                            <textarea id="interest" name="interest" rows="4" cols="50" required></textarea><br><br>
 
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                showSlide(currentIndex);
-            }
+                            <input type="submit" value="Submit">
+                        </form>
+                    </aside>
+                </section>
+            </main>
 
-            setInterval(nextSlide, 5000); // Change slide every 5 seconds
-        </script>
+            <!-- Footer -->
+            <footer class="main-footer">
+                <p>&copy; 2025 Andy Holy Tour and Travel. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <script src="js/script.js"></script>
     </body>
 </html>

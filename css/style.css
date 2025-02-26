@@ -1,61 +1,97 @@
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:white;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Container for the entire page */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Wrapper for the main content */
+.content-wrap {
+    flex: 1;
+}
+
+/* Header styling */
 .main-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the navigation bar horizontally */
     align-items: center;
     background-color: #4C7B8B;
-    color:black;
+    color: black;
     padding: 10px;
 }
 
+/* Responsive header styling */
+@media only screen and (max-width: 600px) {
+    .main-header {
+        flex-direction: column;
+    }
+}
 
+/* Styling for the parent header */
 .parent-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+    font-family: monospace;
 }
 
-/* ngatur logo */
+/* Animation for the h1 element */
+.parent-header h1 {
+    display: inline-block;
+    animation: moveLeftToRight 5s linear infinite;
+}
+
+/* Styling for the company logo */
 .logo-company {  
     height: 50px;
     width: 50px;
     background-image: url('../asset/logo.jpeg');
     background-size: cover;
     border-radius: 50%;
+    margin-right: auto; /* Push the logo to the left */
 }
 
+/* Navigation bar styling */
 nav {
-    display:flex;
+    display: flex;
+    justify-content: center; /* Center the navigation items horizontally */
+    gap: 20px; /* Add spacing between the navigation items */
+    padding: 10px 0; /* Add padding to the top and bottom of the navigation */
 }
 
-nav a{
+/* Styling for navigation links */
+nav a {
     border: 1px solid;
     color: white;
     text-decoration: none;
     padding: 8px;
     border-radius: 4px;
-
 }
 
-.no-border-radius{
+/* No border radius styling */
+.no-border-radius {
     border-radius: 0px;
 }
 
+/* Specific border radius styling */
 .no-border-radius-right {
     border-top-left-radius: 4px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 4px;
-    
 }
 
 .no-border-radius-left {
@@ -65,70 +101,184 @@ nav a{
     border-bottom-left-radius: 0px;
 }
 
+/* Content container styling */
 .content-container {
-    display:flex;
-    justify-content:space-between;
-    gap: 50px; /* Nambah gap  */
+    display: flex;
+    justify-content: space-between;
 }
 
-
-
-/* banner autoslide */
+/* Banner autoslide styling */
 .main-content {
     display: flex;
     border: 2px solid;
-    height: 400px;
+    height: 470px;
     flex: 1;
-
 }
 
-/* form contact us */
-.main-container {
-    border:2px solid;
-    height: 500px;
-    flex: 1;
-    width: 30px;
-}
-
-.main-content, .main-container {
-    width: 30px;
-}
-
+/* Slider styling */
 .slider {
     position: relative;
-    width: 100%;
-    height: 400px; /* tinggi */
+    width: auto;
+    height: auto; /* height */
     overflow: hidden;
 }
 
+/* Slides styling */
 .slides {
     display: flex;
     transition: transform 1s ease;
-    width: 300%; /* lebar slide */
+    width: 300%; /* width of slides */
 }
 
+/* Image styling within slides */
 .slides img {
-    width: 35%;
-    height: 100%;
+    width: 90%;
+    height: 470px;
     object-fit: cover;
 }
 
+/* Arrow button styling */
 .arrow {
     position: absolute;
     top: 50%;
-    transform: translate(-50%);
-    font-size: 2 rem;
-    color:honeydew;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: honeydew;
     background-color: black; 
     padding: 10px;
     cursor: pointer;
-    user-select:none;
+    user-select: none;
 }
 
+/* Left arrow button styling */
 .left-arrow {
     left: 10px;
 }
 
+/* Right arrow button styling */
 .right-arrow {
     right: 10px;
+}
+
+/* Packages section styling */
+.packages {
+    width: 725px;
+    height: 500px;    
+}
+
+.packages-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Add spacing between the images and the .alasan content */
+}
+
+.package-image {
+    width: 250px; /* Set the width of the images */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Alasan section styling */
+.alasan {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 3px;
+    background-color: azure;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Contact section styling */
+#contact {
+    width: 100%; /* Expand the contact section to full width */
+}
+
+/* Main container styling */
+.main-container {
+    width: 100%; /* Expand the main container to full width */
+    display: flex;
+    justify-content: center; /* Center the form horizontally */
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: azure;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Fixed width for the form */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Form heading styling */
+form h2, form h4 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Label styling */
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Input and textarea styling */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    max-width: 300px; /* Fixed width for input fields */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    width: 100%;
+    max-width: 300px; /* Fixed width for the submit button */
+    padding: 10px;
+    background-color: #4C7B8B;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+input[type="submit"]:hover {
+    background-color: #3b5f6b;
+}
+
+/* Footer styling */
+.main-footer {
+    background-color: #4C7B8B;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Keyframes for the moveLeftToRight animation */
+@keyframes moveLeftToRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
