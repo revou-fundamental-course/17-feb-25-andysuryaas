@@ -35,6 +35,7 @@ body {
 @media only screen and (max-width: 600px) {
     .main-header {
         flex-direction: column;
+        align-items: stretch;
     }
 }
 
@@ -62,6 +63,17 @@ body {
     background-size: cover;
     border-radius: 50%;
     margin-right: auto; /* Push the logo to the left */
+}
+
+.company-name{
+    font-size: 10px;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+    margin-left: 10px; /* Add spacing between the logo and the company name */
+    flex-grow: 5; /* Biarkan company-name mengambil ruang yang tersisa */
+    text-align: left; /* Memusatkan teks di dalam company-name */
+    
 }
 
 /* Navigation bar styling */
@@ -101,11 +113,7 @@ nav a {
     border-bottom-left-radius: 0px;
 }
 
-/* Content container styling */
-.content-container {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 /* Banner autoslide styling */
 .main-content {
@@ -170,13 +178,31 @@ nav a {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Add spacing between the images and the .alasan content */
+    gap: 20px; /* Add spacing between the packages */
+}
+
+.package {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: azure;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: monospace;
+    transition: transform 0.3s ease; /* Add transition for the zoom effect */
+}
+
+.package:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
 }
 
 .package-image {
-    width: 250px; /* Set the width of the images */
+    width: 200px; /* Set the width of the images */
     height: auto;
     border-radius: 8px;
+    margin-bottom: 20px; /* Add spacing below the images */
 }
 
 /* Alasan section styling */
